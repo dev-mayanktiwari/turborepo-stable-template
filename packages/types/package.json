@@ -1,4 +1,13 @@
 {
   "name": "@workspace/types",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
 }
