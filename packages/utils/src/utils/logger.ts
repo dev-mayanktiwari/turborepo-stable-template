@@ -71,7 +71,7 @@ const fileLogFormat = format.printf((info) => {
 });
 
 const consoleTransport = (): Array<ConsoleTransportInstance> => {
-  if (process.env.ENV === ApplicationEnvirontment.DEVELOPMENT) {
+  if (process.env.NODE_ENV === ApplicationEnvirontment.DEVELOPMENT) {
     return [
       new transports.Console({
         level: "info",
@@ -83,7 +83,7 @@ const consoleTransport = (): Array<ConsoleTransportInstance> => {
 };
 
 const mongoTransport = (): Array<MongoDBTransportInstance> => {
-  if (process.env.ENV === ApplicationEnvirontment.PRODUCTION) {
+  if (process.env.NODE_ENV === ApplicationEnvirontment.PRODUCTION) {
     return [
       new transports.MongoDB({
         level: "info",
@@ -98,7 +98,7 @@ const mongoTransport = (): Array<MongoDBTransportInstance> => {
 const fileTransport = (): Array<FileTransportInstance> => {
   return [
     new transports.File({
-      filename: path.join(__dirname, `../../../logs/${process.env.ENV}.log`),
+      filename: path.join(__dirname, `../../../logs/${process.env.NODE_ENV}.log`),
       level: "info",
       format: format.combine(format.timestamp(), fileLogFormat),
     }),

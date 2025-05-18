@@ -18,7 +18,7 @@ export default {
           new Error("Invalid input"),
           req,
           ErrorStatusCodes.CLIENT_ERROR.BAD_REQUEST,
-          safeParse.error.format()
+          safeParse.error.flatten()
         );
       }
 
