@@ -1,5 +1,5 @@
 export interface DecodedToken {
-  userId: string;
+  id: string;
   email: string;
   name: string;
 }
