@@ -1,7 +1,7 @@
-export const ApplicationEnvirontment = {
+export const ApplicationEnvironment = {
   PRODUCTION: "production",
   DEVELOPMENT: "development",
 };
 
-export type TApplicationEnvirontment =
-  (typeof ApplicationEnvirontment)[keyof typeof ApplicationEnvirontment];
+export type TApplicationEnvironment =
+  (typeof ApplicationEnvironment)[keyof typeof ApplicationEnvironment];

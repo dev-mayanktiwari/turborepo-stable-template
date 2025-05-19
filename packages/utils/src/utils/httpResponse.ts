@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { THTTPResponse } from "@workspace/types";
-import { ApplicationEnvirontment } from "@workspace/constants";
-import { TApplicationEnvirontment } from "@workspace/constants";
+import { ApplicationEnvironment } from "@workspace/constants";
+import { TApplicationEnvironment } from "@workspace/constants";
 import { logger } from "./logger";
 
 const httpResponse = (
@@ -10,7 +10,7 @@ const httpResponse = (
   responseStatusCode: number,
   responseMessage: string,
   data: unknown = null,
-  env: TApplicationEnvirontment = "development"
+  env: TApplicationEnvironment = "development"
 ) => {
   const response: THTTPResponse = {
     success: true,
@@ -29,7 +29,7 @@ const httpResponse = (
   });
 
   //Production env check
-  if (env === ApplicationEnvirontment.PRODUCTION) {
+  if (env === ApplicationEnvironment.PRODUCTION) {
     delete response.request.ip;
   }
 

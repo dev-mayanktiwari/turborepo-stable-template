@@ -9,7 +9,7 @@ import {
 } from "winston/lib/winston/transports";
 import { createLogger, transports, format } from "winston";
 import { MongoDBTransportInstance } from "winston-mongodb";
-import { ApplicationEnvirontment } from "@workspace/constants";
+import { ApplicationEnvironment } from "@workspace/constants";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -71,7 +71,7 @@ const fileLogFormat = format.printf((info) => {
 });
 
 const consoleTransport = (): Array<ConsoleTransportInstance> => {
-  if (process.env.NODE_ENV === ApplicationEnvirontment.DEVELOPMENT) {
+  if (process.env.NODE_ENV === ApplicationEnvironment.DEVELOPMENT) {
     return [
       new transports.Console({
         level: "info",
@@ -83,7 +83,7 @@ const consoleTransport = (): Array<ConsoleTransportInstance> => {
 };
 
 const mongoTransport = (): Array<MongoDBTransportInstance> => {
-  if (process.env.NODE_ENV === ApplicationEnvirontment.PRODUCTION) {
+  if (process.env.NODE_ENV === ApplicationEnvironment.PRODUCTION) {
     return [
       new transports.MongoDB({
         level: "info",

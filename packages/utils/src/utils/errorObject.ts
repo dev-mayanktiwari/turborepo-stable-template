@@ -1,4 +1,4 @@
-import { ApplicationEnvirontment, ResponseMessage } from "@workspace/constants";
+import { ApplicationEnvironment, ResponseMessage } from "@workspace/constants";
 import { logger } from "./logger";
 import { THTTPError } from "@workspace/types";
 import { Request } from "express";
@@ -9,7 +9,7 @@ export const errorObject = (
   errorStatusCode: number = 500,
   data: unknown = null
 ): THTTPError => {
-  const env = process.env.NODE_ENV || ApplicationEnvirontment.DEVELOPMENT;
+  const env = process.env.NODE_ENV || ApplicationEnvironment.DEVELOPMENT;
 
   const errorObj: THTTPError = {
     success: false,
