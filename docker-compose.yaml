@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  admin-client:
-    container_name: admin-client
+  client:
+    container_name: client
     build:
       context: .  
       dockerfile: ./infra/docker/client/Dockerfile
@@ -15,7 +15,7 @@ services:
     environment:  
       - NEXT_PUBLIC_API_URL=http://server:6969
     env_file:
-      - ./apps/admin-client/.env
+      - ./apps/client/.env
     depends_on:
       - server
 
